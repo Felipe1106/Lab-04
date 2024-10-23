@@ -1,26 +1,16 @@
 import httpx
 
-url = "https://cautious-doodle-pjpjx694jxvcr944-5000.app.github.dev/"
+url = "https://didactic-eureka-r56677xg5gxhw7q-5000.app.github.dev/"  
 
-response = httpx.get(url)
-print(response.status_code)
-print(response)
-
-
-
-response = httpx.get(url)
-print(response.status_code)
-print(response.text)
-
-mydata = {
-    "text": "Hello Phil!",
-    "param2": "Making a POST request",
-    "body": "my own value"
+authData = {
+   "id": "felipe.montero@uconn.edu",
+   "token": "3c44fa6d9bc869945c373879aea756de8aba0937d581970b61bdc78f1100f2a7"
 }
 
-# A POST request to the API
-response = httpx.post(url + "echo", data=mydata)
+
+response = httpx.post(url + "login", data=authData)
 
 # Print the response
 print(response.status_code)
-print(response.text) 
+print(response.text)
+
